@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+           <meta charset="UTF-8"/>
+           <title>Cadastro</title>
+           <link rel='stylesheet' type='text/css' href='style.css'>
+
+           <script>
+            function processar() {
+        var cpfDaPessoa, nomeDaPessoa, sexoDaPessoa, emailDaPessoa, aluno, selecao, selecao2, outro1, necessidadesEspeciais, necessidadesEspeciaisinfo, paralisiac, dvisual, dauditiva, dmotora, dmental, a, 
+        interesseDaPessoa, interesse1DaPessoa, interesse2DaPessoa, interesse3DaPessoa, interesse4DaPessoa, interesse5DaPessoa, b,
+        hobbies = ['Jardinagem', 'Artesanato', 'Leitura', 'Escrita', 'Música', 'Pintura', 'Redes Sociais', 'Viagens', 'Séries', 'Academia', 'Esportes'], c, hobbieDaPessoa, segundooutro, d, sugestoes;
+        cpfDaPessoa = document.formulario.cpf.value;
+        cpfDaPessoa = (cpfDaPessoa==''?'Não identificado':cpfDaPessoa)
+        nomeDaPessoa = document.formulario.nomec.value;
+        nomeDaPessoa = (nomeDaPessoa==''?'Não identificado':nomeDaPessoa)
+        sexoDaPessoa = document.formulario.sexo.value;
+        sexoDaPessoa = (sexoDaPessoa=='F'?'Feminino':sexoDaPessoa=='M'?'Masculino':sexoDaPessoa=='nb'?'Preferiu não informar':'Não identificado')
+        emailDaPessoa = document.formulario.mail.value;
+        emailDaPessoa = (emailDaPessoa==''?'Não identificado':emailDaPessoa)
+        aluno = document.formulario.alunoif.checked;
+        aluno = (aluno==true?'Sim':'Não');
+        selecao = document.formulario.select.value;
+        selecao2 = document.formulario.select.value;
+        outro1 = document.formulario.outrocampus.value;
+        selecao = (selecao=='Outro'?'s':'n');
+        selecao = (selecao=='s'?outro1:selecao2);
+        selecao = (aluno=='Sim'?selecao:'Não é aluno do if')
+        necessidadesEspeciais = document.formulario.necessidades.value;
+        necessidadesEspeciais = (necessidadesEspeciais=='N'?'Não':necessidadesEspeciais=='S'?'Sim':'Não identificado');
+        paralisiac = document.formulario.paralisia.checked;
+        dvisual = document.formulario.visual.checked;
+        dauditiva = document.formulario.auditiva.checked;
+        dmotora = document.formulario.motora.checked;
+        dmental = document.formulario.mental.checked;
+        necessidadesEspeciaisinfo = '<br>'
+        necessidadesEspeciaisinfo += (paralisiac==true?'Paralisia Cerebral <br>':' ')
+        necessidadesEspeciaisinfo += (dvisual==true?'Deficiênicia Visual <br>':' ')
+        necessidadesEspeciaisinfo += (dauditiva==true?'Deficiênicia Auditiva <br>':' ')
+        necessidadesEspeciaisinfo += (dmotora==true?'Deficiênicia Motora <br>':' ')
+        necessidadesEspeciaisinfo += (dmental==true?'Deficiênicia Mental <br>':' ')
+        necessidadesEspeciaisinfo = (necessidadesEspeciais=='Não'?'Não tem':necessidadesEspeciaisinfo)
+        necessidadesEspeciaisinfo = (necessidadesEspeciais=='Não identificado'?'Não identificado':necessidadesEspeciaisinfo)
+        interesseDaPessoa = '<br>'
+        interesse1DaPessoa = document.formulario.interesse1.checked;
+        interesse2DaPessoa = document.formulario.interesse2.checked;
+        interesse3DaPessoa = document.formulario.interesse3.checked;
+        interesse4DaPessoa = document.formulario.interesse4.checked;
+        interesse5DaPessoa = document.formulario.interesse5.checked;
+        b = ''
+        b += (interesse1DaPessoa ==true?'Tecnologia <br>':'');
+        b += (interesse2DaPessoa ==true?'Exatas <br>':'');
+        b += (interesse3DaPessoa ==true?'Humanas <br>':'');
+        b += (interesse4DaPessoa ==true?'Biológicas <br>':'');
+        b += (interesse5DaPessoa ==true?'Educação <br>':'');
+        interesseDaPessoa = (b==''?'Não identificado':'<br>' + b)
+        hobbies[0] = document.formulario.hobbie1.checked;
+        hobbies[1] = document.formulario.hobbie2.checked;
+        hobbies[2] = document.formulario.hobbie3.checked;
+        hobbies[3] = document.formulario.hobbie4.checked;
+        hobbies[4] = document.formulario.hobbie5.checked;
+        hobbies[5] = document.formulario.hobbie6.checked;
+        hobbies[6] = document.formulario.hobbie7.checked;
+        hobbies[7] = document.formulario.hobbie8.checked;
+        hobbies[8] = document.formulario.hobbie9.checked;
+        hobbies[9] = document.formulario.hobbie10.checked;
+        hobbies[10] = document.formulario.hobbie11.checked;
+        c = ''
+        c += (hobbies[0]==true?'Jardinagem <br>':'')
+        c += (hobbies[1]==true?'Artesanato <br>':'')
+        c += (hobbies[2]==true?'Leitura <br>':'')
+        c += (hobbies[3]==true?'Escrita <br>':'')
+        c += (hobbies[4]==true?'Música <br>':'')
+        c += (hobbies[5]==true?'Pintura <br>':'')
+        c += (hobbies[6]==true?'Redes sociais <br>':'')
+        c += (hobbies[7]==true?'Viagens <br>':'')
+        c += (hobbies[8]==true?'Séries <br>':'')
+        c += (hobbies[9]==true?'Academia <br>':'')
+        c += (hobbies[10]==true?'Esportes <br>':'')
+        segundooutro = document.formulario.outro2.checked;
+        e = document.formulario.hobbie.value;
+        c += (segundooutro==true?e:'')
+        hobbieDaPessoa = (c==''?'Não identificado':'<br>' + c)
+        sugestoes = document.formulario.sugest.value;       
+        sugestoes = (sugestoes=='Digite Aqui'?'Nenhuma':sugestoes)
+        
+        document.getElementById("destino").innerHTML = 'CPF: ' +
+      cpfDaPessoa + '<br>' + 'Nome: ' + nomeDaPessoa + '<br>' + 
+      'Sexo: ' + sexoDaPessoa + '<br>' + 'Email: ' + emailDaPessoa + 
+      '<br>' + 'É aluno da IFSP: ' + aluno + '<br>' + 'Campus: ' + selecao + 
+      '<br>' + 'Necessidades: ' + necessidadesEspeciais + '<br>' + 'Quais: ' + necessidadesEspeciaisinfo + '<br>'
+      + 'Interesses: ' + interesseDaPessoa + '<br>' + 'Hobbies: ' + hobbieDaPessoa + '<br>' + 'Sugestões: ' + sugestoes;
+    }
+    function mascaracpf(i){
+   
+   var v = i.value;
+   
+   if(isNaN(v[v.length-1])){
+      i.value = v.substring(0, v.length-1);
+      return;
+   }
+   
+   i.setAttribute("maxlength", "14");
+   if (v.length == 3 || v.length == 7) i.value += ".";
+   if (v.length == 11) i.value += "-";
+
+}
+            </script>
+        </head>
+        <body>
+         <h1> Formulário IFSP </h1>
+         <form name="formulario">
+            <br>
+               <label for="cpf">CPF:</label><br>
+               <input type="text" maxlength="11" name="cpf" placeholder="000.000.000-00" oninput="mascaracpf(this)"/><br><br>
+
+               <label>Nome Completo:</label><br>
+               <input type="text" name="nomec"  placeholder="Nome Completo"> <br><br>
+
+               <label>Sexo: </label><br>
+               <input type="radio" name="sexo" value="F"> Feminino<br>
+               <input type="radio" name="sexo" value="M"> Masculino <br>
+               <input type="radio" name="sexo" value="nb"> Prefiro não informar <br><br>
+
+               <label>E-mail:</label><br>
+               <input type="text" name="mail" placeholder="exemplo@email.com"> <br><br>
+
+               <label>Aluno do IFSP: </label>
+               <input type="checkbox" name="alunoif"> <br> <br>
+
+               <label>Campus IFSP:</label>
+               <select name="select">
+                  <option value="São Roque" name="campus">São Roque</option>
+                  <option value="Campinas" name="campus">Campinas</option>
+                  <option value="Araraquara" name="campus">Araraquara</option>
+                  <option value="Cubatão" name="campus">Cubatão</option>
+                  <option value="Outro" name="campus">Outro</option>
+               </select> <br>
+
+               <label>Outro:</label> <input type="text" name="outrocampus" class="outro"/><br><br>
+
+               <label>Necessidades especiais: </label><br>
+               <input type="radio" name="necessidades" value="S"> Sim<br>
+               <input type="radio" name="necessidades" value="N"> Não <br><br>
+
+               <label>Quais?</label> <br>
+               <input type="checkbox" name="visual" value="visual"> Deficiência visual<br>
+               <input type="checkbox" name="auditiva" value="auditiva"> Deficiência auditiva <br>
+               <input type="checkbox" name="motora" value="motora"> Deficiência motora<br>
+               <input type="checkbox" name="mental" value="mental"> Deficiência mental <br>
+               <input type="checkbox" name="paralisia" value="paralisia"> Paralisia cerebral<br><br>
+
+               <label>Áreas de interesse:</label> <br>
+               <input type="checkbox" name="interesse1" value="tecnologia"> Tecnologia<br>
+               <input type="checkbox" name="interesse2" value="exatas"> Exatas <br>
+               <input type="checkbox" name="interesse3" value="humanas"> Humanas<br>
+               <input type="checkbox" name="interesse4" value="biológicas"> Biológicas <br>
+               <input type="checkbox" name="interesse5" value="educação"> Educação<br><br>
+
+               <label>Hobbies:</label> <br>
+               <input type="checkbox" name="hobbie1" value="Jardinagem">  Jardinagem<br>
+               <input type="checkbox" name="hobbie2" value="Artesanato"> Artesanato <br>
+               <input type="checkbox" name="hobbie3" value="Leitura"> Leitura<br>
+               <input type="checkbox" name="hobbie4" value="Escrita"> Escrita <br>
+               <input type="checkbox" name="hobbie5" value="Música"> Música<br>
+               <input type="checkbox" name="hobbie6" value="Pintura">  Pintura<br>
+               <input type="checkbox" name="hobbie7" value="Redes"> Redes sociais <br>
+               <input type="checkbox" name="hobbie8" value="Viagens"> Viagens<br>
+               <input type="checkbox" name="hobbie9" value="Séries"> Séries <br>
+               <input type="checkbox" name="hobbie10" value="Academia"> Academia<br>
+               <input type="checkbox" name="hobbie11" value="Esportes"> Esportes<br>
+               <input type="checkbox" name="outro2"> 
+               <label>Outros:</label> <input type="text" name="hobbie" class="outro"/><br><br>
+
+               <label> Sugestões: </label><br>
+               <textarea rows="5" cols="50" name="sugest">Digite Aqui</textarea> <br><br>
+               <input  value="Enviar" type="button" onclick="processar();">
+               <br><br>
+               </form>
+               <p id="destino"></p>
+           </div>
+        </div>
+        </body>
+        </html>

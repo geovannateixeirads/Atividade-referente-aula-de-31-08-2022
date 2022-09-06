@@ -1,0 +1,56 @@
+body {
+    padding: 0;
+    margin: 0;
+    border-top: 50px solid #45543D;
+    border-bottom: 30px solid #45543D;
+    margin: 0;
+    
+}
+
+form {
+    font-family: Verdana,Tahoma,sans-serif;
+    font-size: 15px;
+    max-width: 500px;
+}
+
+h1 {
+    color: #3bc458;
+    text-shadow: 2.3px 0px 2px rgb(43, 44, 43);
+}
+
+input, textarea {
+    padding: 10px;
+    color: black;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border: 1px solid;
+}
+.outro
+{
+    padding: 2px;
+}
+
+input:hover, textarea:hover, input:focus, textarea:focus {
+    background-color: #bfffbf;
+    color: black;
+    font-weight: bold;
+}
+
+.enviar {
+    background-color: #66FFFF;
+    height: 40px;
+    width: 100px;
+    font-weight: bold;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border: 1px solid;
+    color: black;
+}
+
+textarea {
+    width: 400px;
+    height: 120px;
+    line-height: 20px;
+    max-width: 400px;
+}
